@@ -19,7 +19,7 @@ public class GooglePageTest {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setBrowserName(BrowserType.CHROME);
 		ChromeDriverService service = new ChromeDriverService.Builder().usingAnyFreePort()
-				.usingDriverExecutable(new File(FileUtils.getUserDirectory(), ".venus/selenium/chrome/2.22/chromedriver")).build();
+				.usingDriverExecutable(new File(FileUtils.getUserDirectory(), "selenium/chromedriver")).build();
 		ChromeDriver driver = new ChromeDriver(service);
 		try {
 			driver.get("https://www.google.com/");
