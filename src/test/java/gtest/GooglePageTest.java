@@ -8,9 +8,7 @@ import gtest.driver.DriverTest;
 import gtest.pages.GooglePage;
 
 public class GooglePageTest {
-	
 	DriverTest test = new DriverTest();
-
 	@Test
 	public void gTest() {
 		WebDriver driver = test.driver();
