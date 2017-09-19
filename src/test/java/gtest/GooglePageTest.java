@@ -1,26 +1,19 @@
 package gtest;
 
-import java.io.File;
-
-import org.apache.commons.io.FileUtils;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.remote.BrowserType;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
+import gtest.driver.DriverTest;
 import gtest.pages.GooglePage;
 
 public class GooglePageTest {
+	
+	DriverTest test = new DriverTest();
 
 	@Test
 	public void gTest() {
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setBrowserName(BrowserType.CHROME);
-		ChromeDriverService service = new ChromeDriverService.Builder().usingAnyFreePort()
-				.usingDriverExecutable(new File(FileUtils.getUserDirectory(), ".venus/selenium/chrome/2.22/chromedriver")).build();
-		ChromeDriver driver = new ChromeDriver(service);
+		WebDriver driver = test.driver();
 		try {
 			driver.get("https://www.google.com/");
 			GooglePage gPage = new GooglePage(driver);
